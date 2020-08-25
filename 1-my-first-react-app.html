@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Ma première application React</title>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/themes/prism-tomorrow.min.css"
+      integrity="sha512-vswe+cgvic/XBoF1OcM/TeJ2FW0OofqAVdCZiEYkd6dwGXthvkSFWOoGGJgS2CW70VK5dQM5Oh+7ne47s74VTg=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/toolbar/prism-toolbar.min.css"
+      integrity="sha512-DSAA0ziYwggOJ3QyWFZhIaU8bSwQLyfnyIrmShRLBdJMtiYKT7Ju35ujBCZ6ApK3HURt34p2xNo+KX9ebQNEPQ=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="./node_modules/@forevolve/bootstrap-dark/dist/css/bootstrap-dark.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="container">
+    <h1>C’est quoi React ?</h1>
+    <p>
+      C’est une bibliothèque JavaScript pour créer des interfaces
+      utilisateurs.<br />
+      Développée par Facebook et publiée en 2013<br />
+      Permet d’écrire des composants autonomes qui possedent leur propre
+      état.<br />
+      Lorsque les données changeront, React mettra à jour, de façon optimale,
+      uniquement les composants qui en auront besoin.<br />
+    </p>
+    <p>
+      React n’est pas un framework, nous avons donc le choix de mettre en place
+      les libraries que nous voulons.<br />
+      Typage avec Typescript, PropTypes ou rien.<br />
+      AJAX avec fetch, axios, ...<br />
+      Routing avec react-router, reach-router, ...<br />
+      etc...
+    </p>
+    <p>
+      On peut décider de créer une SPA (Single Page Application) à partir de
+      zéro ou bien progressivement venir remplacer certains parties d'une
+      application existante par des composants React.
+    </p>
+    <p>
+      React est un langage déclaratif, c'est à dire que l'on ne va pas manipuler
+      directement le DOM (Document Object Model). À l’opposé du langage
+      impératif (par exemple avec jQuery) où l’on va devoir dire au navigateur
+      ce qu‘il faut faire pour manipuler le DOM.
+    </p>
+    <p>
+      Bonus : React permet de faire des applications web mais également des
+      applications mobile native avec React Native.
+    </p>
+    <h1>Votre meilleure alliée ?</h1>
+    <p class="text-center">
+      <a href="https://fr.reactjs.org">La documentation</a><br /><br />
+      <img src="./assets/rtfm.png" alt="Read the fucking manual" /><br />
+    </p>
+    <h2>Ma première application React</h2>
+    <p>
+      Après avoir vérifier les prérequis Node >= 8.10 et de npm >= 5.6<br />
+      Lancer les commandes suivantes pour créer votre première application React
+    </p>
+    <pre><code class="language-bash">npx create-react-app my-first-react-app
+cd my-first-react-app
+yarn start</code></pre>
+    <h2>Le rendu des éléments</h2>
+    <p>
+      React DOM se charge de mettre à jour le DOM afin qu’il corresponde aux
+      éléments React.
+    </p>
+    <pre data-src="./my-first-react-app/snippets/hello-world.js"></pre>
+    <p>
+      Ici React DOM va remplacer le contenu de l’élèment avec l’ID
+      <b>root</b> par une balise <b>h1</b> (plus exactement un composant
+      <b>h1</b>).
+    </p>
+    <pre data-src="./my-first-react-app/snippets/react-dom.js"></pre>
+    <p>
+      Ici React DOM va remplacer le contenu de l’élèment avec l’ID
+      <b>root</b> par notre composant <b>App</b>. C’est le seul endroit où l'on
+      va manipuler directement le DOM, dans le reste de notre application c’est
+      React qui va manipuler le <b>DOM virtuel</b>, puis le DOM si nécessaire.
+    </p>
+    <h2>Les composants</h2>
+    <h3>Module 1 : Composant simple et composant à état</h3>
+    <h4>Composant simple (Stateless component)</h4>
+    <p>
+      Les composants React implémentent une méthode render() qui prend des
+      données en entrée et retourne ce qui doit être affiché. Cet exemple
+      utilise une syntaxe qui ressemble à du XML et qu’on appelle JSX. Les
+      données passées au composant sont accessibles dans render() via
+      this.props.
+      <br />
+    </p>
+    <h4>Composant à état (Statefull component)</h4>
+    <p>
+      En plus de pouvoir recevoir des données (accessibles via this.props), un
+      composant peut maintenir un état local (accessible via this.state).
+      Lorsque l’état local d’un composant change, son affichage est mis à jour
+      en appelant render() une nouvelle fois.
+    </p>
+    <h3>Module 2 : Fonctions composants et composants à base de classes</h3>
+    <h4>Fonction composant (Functional Component)</h4>
+    <p>
+      C’est un composant React qui accepte un seul argument « props » («
+      propriétés ») contenant des données, et renvoie un élément React.
+    </p>
+    <h4>Composant à base de classe (Class Component)</h4>
+    <p>
+      C'est un composant React écrit sous forme de classe qui possède un état et
+      un cycle de vie.
+    </p>
+    <h3>Module 3 : Cycle de vie</h3>
+    <p>
+      La méthode componentDidMount() est exécutée après que la sortie du
+      composant a été injectée dans le DOM.<br />
+      Lorsque le composant finit par être retiré du DOM, React appellera la
+      méthode de cycle de vie componentWillUnmount().<br />
+    </p>
+    <h2>Différents concepts utilisés par React</h2>
+    <p>Immutabilité</p>
+    <p>DOM Virtuel</p>
+    <p>Unidirectionnel</p>
+    <p>JSX et JS</p>
+    <p>PropTypes</p>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/prism.min.js"
+      integrity="sha512-WkVkkoB31AoI9DAk6SEEEyacH9etQXKUov4JRRuM1Y681VsTq7jYgrRw06cbP6Io7kPsKx+tLFpH/HXZSZ2YEQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/autoloader/prism-autoloader.min.js"
+      integrity="sha512-ROhjG07IRaPZsryG77+MVyx3ZT5q3sGEGENoGItwc9xgvx+dl+s3D8Ob1zPdbl/iKklMKp7uFemLJFDRw0bvig=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/toolbar/prism-toolbar.min.js"
+      integrity="sha512-cu2C9EssrOrVXT4thyL4gz/qWyh3Lq9XbICUXYyh3zJRCSKk1J08tBKPXnsSpdpZXOliaK/OJBygw/l0twAmwA=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/show-language/prism-show-language.min.js"
+      integrity="sha512-rZAius+HVrQkc0mvt2XQq+qJ5BY0rON8Vx7Vobf+vjmdoC5qadOUExA6R89RTJxExGg5LPQudlEpDdt9g12CIA=="
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
