@@ -136,6 +136,27 @@ class Developer extends Person {
   }
 }
     </code></pre>
+    <h1>Affectation par décomposition (destructuring)</h1>
+    <p>
+      Permet d’extraire des données d'un tableau ou d'un objet.
+    </p>
+    <pre><code class="language-javascript">const myObject = {
+  firstName: 'Michel',
+  lastName: 'Mabel',
+  age: 30,
+};
+const { firstName, lastName } = myObject;
+console.log(`${firstName} ${lastName}`); // display Michel Mabel
+
+const { firstName, ...rest } = myObject;
+console.log(rest); // display { lastName: 'Mabel', age: 30 }
+
+const array = ['a', 'b', 'c', 'd'];
+const [value1, value2] = array;
+console.log(`${value1} --- ${value2}`); // display a --- b
+
+const [value1,, value2] = array;
+console.log(`${value1} --- ${value2}`); // display a --- c</code></pre>
     <h2>Bonus : async/await</h2>
     <p>
       Disponible à partir de ES7 il nous faudra un transcompilateur afin de
