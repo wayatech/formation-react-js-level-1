@@ -1,2 +1,3 @@
-# formation-react-js-level-1
-Support de formation React JS Niveau 1
+# Formation React - Niveau 1
+
+- [Introduction à ES6](./0-why-you-are-not-using-es6-yet.html)
