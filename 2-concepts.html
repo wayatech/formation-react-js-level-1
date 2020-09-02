@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Différents concepts utilisés par React</title>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/themes/prism-tomorrow.min.css"
+      integrity="sha512-vswe+cgvic/XBoF1OcM/TeJ2FW0OofqAVdCZiEYkd6dwGXthvkSFWOoGGJgS2CW70VK5dQM5Oh+7ne47s74VTg=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/toolbar/prism-toolbar.min.css"
+      integrity="sha512-DSAA0ziYwggOJ3QyWFZhIaU8bSwQLyfnyIrmShRLBdJMtiYKT7Ju35ujBCZ6ApK3HURt34p2xNo+KX9ebQNEPQ=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="./node_modules/@forevolve/bootstrap-dark/dist/css/bootstrap-dark.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="container">
+    <h1>Différents concepts utilisés par React</h1>
+    <h2>Immutabilité</h2>
+    <p>
+      <img
+        alt="immutability"
+        src="./assets/immutability.png"
+        style="background-color: grey; max-width: 100%"
+      />
+    </p>
+    <p>
+      En programmation, une variable est immuable lorsque sa valeur ne peut plus
+      être modifiée après sa création.<br />
+      En javascript les chaînes sont immuables par défaut. Lorsque l'on modifie
+      une chaîne, en réalité on créé une nouvelle chaîne et on l’assigne au même
+      nom de variable.<br />
+      Pour faire simple, si l’on veut modifier la valeur d’une variable on créé
+      une nouvelle variable.<br />
+      Pour ajouter un élément à un tableau, on créé un nouveau tableau en
+      concaténant les éléments de l'ancien tableau et le nouvel élément.<br />
+      Un objet n’est jamais modifié mais il est copié avec la ou les valeurs qui
+      doivent être modifiées.<br />
+      Un exemple avec React : le cas de l’état. On ne modifie jamais la
+      propriété <em>state</em> directement mais uniquement avec la méthode
+      <em>setState</em>.<br />
+    </p>
+    <h4>Mais pourquoi l’immuabilité ?</h4>
+    <h5>Lisibilité</h5>
+    <p>Le code devient plus lisible et compréhensible.<br /></p>
+    <h5>Prévisibilité</h5>
+    <p>
+      Une fonction ne changera jamais une valeur dans que vous en soyez
+      informé.<br />
+    </p>
+    <h5>Performance</h5>
+    <p>
+      Le code peut être optimiser plus facilement. Javascript est plus
+      performant lors qu'il échange la référence d’un ancien object par un
+      nouveau plutôt que de transformant l’ancien objet.<br />
+    </p>
+    <h2>DOM Virtuel</h2>
+    <p>
+      <img
+        alt="Virtual DOM"
+        src="./assets/virtual-dom.png"
+        style="max-width: 100%"
+      />
+    </p>
+    <p>
+      Sur un navigateur, lors que le DOM change, le navigateur doit effectuer
+      des opérations qui sont longueuses et coûteuses (tout est relatif, les
+      opérations s'effectuent en quelques ms), notamment le
+      <em>rendu de l’arbre</em>, le <em>layout</em> (ou <em>reflow</em> ou
+      <em>relayout</em>) et la <em>peinture</em> (<em>repaint</em>).<br />
+      L’arbre de rendu est une représentation des éléments HTML qui seront
+      rendus sur la page et leurs styles associés.<br />
+      Durant le <em>layout</em> le navigateur détermine la dimension et la
+      position de tous les éléments sur la page.<br />
+      Ensuite durant le <em>repaint</em> le navigateur effectue les changements
+      visuels et/ou de contenu des élèments.
+    </p>
+    <p>
+      React utilise un DOM virtuel afin d’alléger le travail du navigateur.
+      Lorsque l’on appelle la méthode <em>setState()</em> (et que l’état du
+      composant est modifié) React définie le composant comme
+      <em>dirty</em>.<br />
+      Ensuite React met à jour le DOM virtuel en appliquant les différences de
+      tous les composants <em>dirty</em> c’est l'étape de <em>réconciliation</em
+      ><br />
+      React effectue un traitement par lot et effectue une mise à jour unique du
+      DOM afin de réduire le nombre de <em>reflow</em> et de <em>repaint</em>.
+    </p>
+    <h2>Unidirectionnel</h2>
+    <p>
+      <img
+        alt="Unidirectional Data Flow"
+        src="./assets/unidirectional-data-flow.png"
+        style="max-width: 100%"
+      />
+    </p>
+    <p>
+      Dans React le flux de données est unidirectionnel (liaison
+      unidirectionnelle). En anglais on retrouve les termes
+      <em>Unidirectional Data Flow</em> et <em>One-way data binding</em>.<br />
+    </p>
+    <h4>Quels sont les avantages ?</h4>
+    <p>
+      Une architecture plus simple et donc plus facile à lire.<br />
+      Moins sujette aux erreurs car nous avons un meilleur contrôle des
+      données.<br />
+      Debug plus facile car nous savons d'où provient la donnée.<br />
+    </p>
+    <h2>Syntaxe JSX</h2>
+    <p>
+      <img alt="JSX" src="./assets/jsx.png" style="max-width: 100%" />
+    </p>
+    <p>
+      Le <em>JSX</em> est un extension syntaxique de JavaScript qui ressemble à
+      du HTML ou du XML. C’est un langage de balisage qui inclus également du
+      Javascript.<br />
+      Habituellement pour <em>séparer les préoccupations</em> on va séparer le
+      contrôleur et la vue.<br />Avec React on procéde différement, on va créer
+      des <em>composants</em> autonomes, en réduisant autant que possible leur
+      compléxité et leur responsabilité.<br />Cela ressemble à l’architecture
+      orientée micro-service pour un back-end.<br />
+    </p>
+    <p>
+      JSX est une expression, après la compilation les expressions JSX
+      deviennent de appels de fonctions JavaScript dont l’évaluation renvoie des
+      objets JavaScript.<br />
+      Cela nous permet d’utiliser du JSX dans des instructions
+      <strong>if</strong>, des boucles <strong>for</strong>, etc...<br />
+      Comme avec le XHTML toutes les balises doivent être fermées.<br />
+      La convention de nommage utilisée est le <em>lower camelCase</em>.<br />
+    </p>
+    <p>
+      Ce n’est pas obligatoire d’utiliser le <em>JSX</em> lorsque l’on utilise
+      React, donc si vous n’aimez pas la syntaxe <em>JSX</em> vous pouvez vous
+      en passez.<br />
+    </p>
+    <h2>PropTypes</h2>
+    <p>
+      <img
+        alt="PropTypes"
+        src="./assets/proptypes.jpg"
+        style="max-width: 100%"
+      />
+    </p>
+    <p>
+      Lorsqu'une application grandit, <strike>on peut</strike> il faut utiliser
+      des outils de validation de types. Les plus courants sont <em>Flow</em> et
+      <em>Typescript</em>.<br />Si on ne souhaite pas utiliser ces extensions,
+      React fournit sa propre fonctionnalité de validation.<br />
+    </p>
+    <pre data-src="./prop-types/greeting.js"></pre>
+    <pre data-src="./prop-types/greeting-stranger.js"></pre>
+    <p>
+      PropTypes affiche un message d’avertissement dans la console Javascript
+      lorsqu'une valeur fournie ne respecte pas le type défini.<br />
+      La validation ne s’effectue qu'en mode développement et donc ne ralentira
+      pas l’application en production.<br />
+    </p>
+    <pre data-src="./prop-types/real-example.js"></pre>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/prism.min.js"
+      integrity="sha512-WkVkkoB31AoI9DAk6SEEEyacH9etQXKUov4JRRuM1Y681VsTq7jYgrRw06cbP6Io7kPsKx+tLFpH/HXZSZ2YEQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/autoloader/prism-autoloader.min.js"
+      integrity="sha512-ROhjG07IRaPZsryG77+MVyx3ZT5q3sGEGENoGItwc9xgvx+dl+s3D8Ob1zPdbl/iKklMKp7uFemLJFDRw0bvig=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/toolbar/prism-toolbar.min.js"
+      integrity="sha512-cu2C9EssrOrVXT4thyL4gz/qWyh3Lq9XbICUXYyh3zJRCSKk1J08tBKPXnsSpdpZXOliaK/OJBygw/l0twAmwA=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/show-language/prism-show-language.min.js"
+      integrity="sha512-rZAius+HVrQkc0mvt2XQq+qJ5BY0rON8Vx7Vobf+vjmdoC5qadOUExA6R89RTJxExGg5LPQudlEpDdt9g12CIA=="
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
