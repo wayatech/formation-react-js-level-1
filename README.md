@@ -5,3 +5,5 @@
 - [Création d’une application React](./1-my-first-react-app.html)
 
 - [Différents concepts utilisé par React](./2-concepts.html)
+
+- [Contrôler la qualité de votre code](./3-code-quality.html)

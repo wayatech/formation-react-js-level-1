@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Contrôler la qualité de votre code</title>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/themes/prism-tomorrow.min.css"
+      integrity="sha512-vswe+cgvic/XBoF1OcM/TeJ2FW0OofqAVdCZiEYkd6dwGXthvkSFWOoGGJgS2CW70VK5dQM5Oh+7ne47s74VTg=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/toolbar/prism-toolbar.min.css"
+      integrity="sha512-DSAA0ziYwggOJ3QyWFZhIaU8bSwQLyfnyIrmShRLBdJMtiYKT7Ju35ujBCZ6ApK3HURt34p2xNo+KX9ebQNEPQ=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="./node_modules/@forevolve/bootstrap-dark/dist/css/bootstrap-dark.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="container">
+    <h1>Contrôler la qualité de votre code</h1>
+    <h2>Les différentes approches</h2>
+
+    <h6>
+      • Être extrêment rigoureux lors de l’écriture et à la rélecture avant
+      commit
+    </h6>
+    <h6>
+      • Mettre en place des outils qui auditent votre code et informent des
+      erreurs automatiquement
+    </h6>
+    <h6>
+      • Ne rien changer aux mauvaises habitudes, de toute façon dans un mois je
+      quitte le projet
+    </h6>
+    <h2>Les différents outils</h2>
+    <h3>ESLint</h3>
+    <p>
+      ESLint est un linter, un outil qui analyse statiquement du code et vérifie
+      que celui-ci respecte un certain nombre de règles configurables de manière
+      (très) fine.<br />
+      Interêts :<br />
+      • Constance du coding style (bonnes pratiques ou considérations
+      esthétiques) • Analyse des erreurs de syntaxes
+    </p>
+    <h3>Prettier</h3>
+    <p>
+      Prettier est un code formater. Il va s’occuper de formater votre code avec
+      les règles qu’on lui aura définies.<br />
+      Interêts :<br />
+      • Le code écrit sera formaté de façon uniforme et selon des règles
+      établies<br />
+      • L’écriture de code étant maintenant uniforme, la relecture de code
+      devient plus facile et on peut faire une vraie relecture de code et non un
+      simple survol.<br />
+    </p>
+    <h3>ESLint + Prettier</h3>
+    <p>
+      Avec quelques librairies de configuration et quelques plugins on parvient
+      à faire fonctionner en symbiose ESLint et Prettier afin de formatter notre
+      code puis de le vérifier.<br />
+    </p>
+    <h3>Husky et lint-staged</h3>
+    <p>
+      Husky a un slogan “Git hooks made easy” et effectivement il suffit de
+      l‘installer puis de rajouter quelques lignes dans le fichier package.json
+      pour déclarer des git hooks.
+    </p>
+    <pre data-src="./code-quality/husky.json"></pre>
+    <p>
+      lint-staged permet d’executer des commandes sur tous les fichiers qui sont
+      <em>staged</em>.<br />
+      Le but principal est de linter le code et d’empêcher le commit si le lint
+      échoue.<br />
+    </p>
+    <pre data-src="./code-quality/lint-staged.json"></pre>
+    <h2>La relecture de code / Code review</h2>
+    <p>
+      La relecture de code est multi-fonctionnelle : elle aide à prévenir
+      l’intrusion de mauvais code dans le projet mais elle permet aussi la
+      montée en compétence d’un nouvel arrivant sur un projet, le partage et
+      l’uniformisation des bonnes pratiques.<br />
+      Les relecteurs peuvent faire des commentaires afin remonter des bugs, des
+      vulnérabilités potentielles ou des erreurs de conception.<br />
+      La relecture ne doit pas remplacer la phase de recette du développeur et
+      du recetteur.<br />
+      <img
+        src="./assets/code-review.jpg"
+        alt="Code review"
+        style="max-width: 100%"
+      />
+    </p>
+    <p>
+      exemple avec GitLab :<br />
+      Le développeur crée sa branche <em>feat/my-awesome-feature</em> à partir
+      de la branche <em>develop</em> et commence à développer.<br />
+      Lorsque sonn travail est terminé,il push sa branche de
+      <em>feature</em> sur le dépot et créé une
+      <em>demande de fusion</em> (merge request) vers la branche
+      <em>develop</em>.<br />
+      Une fois la demande relue et approuvée par l’équipe le développeur (ou le
+      maintainer) peut accepter la demande et fusionner le code vers la branche
+      cible.<br/
+      <img
+        src="./assets/merge-request.png"
+        alt="Merge request review"
+        style="max-width: 100%"
+      />
+    </p>
+    <h2>Quand mettre en place ces outils et processus</h2>
+    <p>
+      Maintenant !<br />
+      Il n’est jamais trop tôt ni trop tard pour bien faire.<br />
+    </p>
+    <p>
+      Sur un nouveau projet, cette mise en place ralentira légèrement le
+      démarrage mais permettra de pouvoir faire évoluter facilement et
+      rapidement le projet tout au long de sa durée de vie.<br />
+      <img
+        src="./assets/new-code.png"
+        alt="Code review"
+        style="max-width: 100%"
+      />
+    </p>
+    <p>
+      Sur un projet déjà existant, cette mise en place va ralentir le
+      développement des nouvelles fonctionnalités durant un temps puis dès que
+      le projet respectera majoritairement vos règles de qualité de code le
+      temps d’écriture va s’accèlerer (puis dépasser votre vitesse d’écriture
+      actuelle).
+      <br />
+      <img
+        src="./assets/old-code.png"
+        alt="Code review"
+        style="max-width: 100%"
+      />
+    </p>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/prism.min.js"
+      integrity="sha512-WkVkkoB31AoI9DAk6SEEEyacH9etQXKUov4JRRuM1Y681VsTq7jYgrRw06cbP6Io7kPsKx+tLFpH/HXZSZ2YEQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/autoloader/prism-autoloader.min.js"
+      integrity="sha512-ROhjG07IRaPZsryG77+MVyx3ZT5q3sGEGENoGItwc9xgvx+dl+s3D8Ob1zPdbl/iKklMKp7uFemLJFDRw0bvig=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/toolbar/prism-toolbar.min.js"
+      integrity="sha512-cu2C9EssrOrVXT4thyL4gz/qWyh3Lq9XbICUXYyh3zJRCSKk1J08tBKPXnsSpdpZXOliaK/OJBygw/l0twAmwA=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/show-language/prism-show-language.min.js"
+      integrity="sha512-rZAius+HVrQkc0mvt2XQq+qJ5BY0rON8Vx7Vobf+vjmdoC5qadOUExA6R89RTJxExGg5LPQudlEpDdt9g12CIA=="
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
