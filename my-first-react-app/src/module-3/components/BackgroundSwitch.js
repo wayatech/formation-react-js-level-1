@@ -1,11 +1,6 @@
 import React from "react";
 
 class BackgroundSwitch extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { seconds: 0 };
-  }
-
   render() {
     return (
       <React.Fragment>

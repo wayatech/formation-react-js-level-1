@@ -64,7 +64,11 @@
     <h1>Votre meilleure alliée ?</h1>
     <p class="text-center">
       <a href="https://fr.reactjs.org">La documentation</a><br /><br />
-      <img src="./assets/rtfm.png" alt="Read the fucking manual" /><br />
+      <img
+        src="./assets/rtfm.png"
+        alt="Read the fucking manual"
+        style="max-width: 100%"
+      /><br />
     </p>
     <h2>Ma première application React</h2>
     <p>
@@ -103,6 +107,9 @@ yarn start</code></pre>
       this.props.
       <br />
     </p>
+    <pre
+      data-src="./my-first-react-app/src/module-2/components/BackgroundSwitch.js"
+    ></pre>
     <h4>Composant à état (Statefull component)</h4>
     <p>
       En plus de pouvoir recevoir des données (accessibles via this.props), un
@@ -110,17 +117,26 @@ yarn start</code></pre>
       Lorsque l’état local d’un composant change, son affichage est mis à jour
       en appelant render() une nouvelle fois.
     </p>
+    <pre
+      data-src="./my-first-react-app/src/module-2/components/Counter/index.js"
+    ></pre>
     <h3>Module 2 : Fonctions composants et composants à base de classes</h3>
     <h4>Fonction composant (Functional Component)</h4>
     <p>
       C’est un composant React qui accepte un seul argument « props » («
       propriétés ») contenant des données, et renvoie un élément React.
     </p>
+    <pre
+      data-src="./my-first-react-app/src/module-2/components/BackgroundSwitch.js"
+    ></pre>
     <h4>Composant à base de classe (Class Component)</h4>
     <p>
       C'est un composant React écrit sous forme de classe qui possède un état et
       un cycle de vie.
     </p>
+    <pre
+      data-src="./my-first-react-app/src/module-3/components/BackgroundSwitch.js"
+    ></pre>
     <h3>Module 3 : Cycle de vie</h3>
     <p>
       La méthode componentDidMount() est exécutée après que la sortie du
@@ -128,12 +144,9 @@ yarn start</code></pre>
       Lorsque le composant finit par être retiré du DOM, React appellera la
       méthode de cycle de vie componentWillUnmount().<br />
     </p>
-    <h2>Différents concepts utilisés par React</h2>
-    <p>Immutabilité</p>
-    <p>DOM Virtuel</p>
-    <p>Unidirectionnel</p>
-    <p>JSX et JS</p>
-    <p>PropTypes</p>
+    <pre
+      data-src="./my-first-react-app/src/module-3/components/Timer/index.js"
+    ></pre>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/prism.min.js"
       integrity="sha512-WkVkkoB31AoI9DAk6SEEEyacH9etQXKUov4JRRuM1Y681VsTq7jYgrRw06cbP6Io7kPsKx+tLFpH/HXZSZ2YEQ=="
