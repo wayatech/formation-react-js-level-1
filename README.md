@@ -7,3 +7,5 @@
 - [Différents concepts utilisé par React](./2-concepts.html)
 
 - [Contrôler la qualité de votre code](./3-code-quality.html)
+
+- [Gestion de l’état global](./4-global-state.html)
