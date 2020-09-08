@@ -9,3 +9,5 @@
 - [Contrôler la qualité de votre code](./3-code-quality.html)
 
 - [Gestion de l’état global](./4-global-state.html)
+
+- [Déployer une application React](./5-deploy.html)
