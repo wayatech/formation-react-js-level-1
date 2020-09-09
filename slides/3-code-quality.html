@@ -23,9 +23,9 @@
     />
     <link
       rel="stylesheet"
-      href="./node_modules/@forevolve/bootstrap-dark/dist/css/bootstrap-dark.min.css"
+      href="../node_modules/@forevolve/bootstrap-dark/dist/css/bootstrap-dark.min.css"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../style.css" />
   </head>
   <body class="container">
     <h1>Contrôler la qualité de votre code</h1>
@@ -76,14 +76,14 @@
       l‘installer puis de rajouter quelques lignes dans le fichier package.json
       pour déclarer des git hooks.
     </p>
-    <pre data-src="./code-quality/husky.json"></pre>
+    <pre data-src="../assets/code-quality/husky.json"></pre>
     <p>
       lint-staged permet d’executer des commandes sur tous les fichiers qui sont
       <em>staged</em>.<br />
       Le but principal est de linter le code et d’empêcher le commit si le lint
       échoue.<br />
     </p>
-    <pre data-src="./code-quality/lint-staged.json"></pre>
+    <pre data-src="../assets/code-quality/lint-staged.json"></pre>
     <h2>La relecture de code / Code review</h2>
     <p>
       La relecture de code est multi-fonctionnelle : elle aide à prévenir
@@ -95,7 +95,7 @@
       La relecture ne doit pas remplacer la phase de recette du développeur et
       du recetteur.<br />
       <img
-        src="./assets/code-review.jpg"
+        src="../assets/code-review.jpg"
         alt="Code review"
         style="max-width: 100%"
       />
@@ -112,7 +112,7 @@
       maintainer) peut accepter la demande et fusionner le code vers la branche
       cible.<br/
       <img
-        src="./assets/merge-request.png"
+        src="../assets/merge-request.png"
         alt="Merge request review"
         style="max-width: 100%"
       />
@@ -127,7 +127,7 @@
       démarrage mais permettra de pouvoir faire évoluter facilement et
       rapidement le projet tout au long de sa durée de vie.<br />
       <img
-        src="./assets/new-code.png"
+        src="../assets/new-code.png"
         alt="Code review"
         style="max-width: 100%"
       />
@@ -140,7 +140,7 @@
       actuelle).
       <br />
       <img
-        src="./assets/old-code.png"
+        src="../assets/old-code.png"
         alt="Code review"
         style="max-width: 100%"
       />
