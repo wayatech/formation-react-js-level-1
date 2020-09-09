@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title display is consistent 1`] = `
+<p
+  style={
+    Object {
+      "fontWeight": "bold",
+    }
+  }
+>
+  This is my title
+</p>
+`;

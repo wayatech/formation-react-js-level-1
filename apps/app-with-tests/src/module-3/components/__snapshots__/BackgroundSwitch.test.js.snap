@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BackgroundSwitch  correctly 1`] = `
+Array [
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Green
+  </button>,
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Red
+  </button>,
+]
+`;
+
+exports[`BackgroundSwitch change color to green and red 1`] = `
+Array [
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Green
+  </button>,
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Red
+  </button>,
+]
+`;
+
+exports[`BackgroundSwitch increment correctly 1`] = `
+Array [
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Green
+  </button>,
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Red
+  </button>,
+]
+`;

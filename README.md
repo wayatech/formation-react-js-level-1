@@ -11,3 +11,5 @@
 - [Gestion de l’état global](./slides/4-global-state.html)
 
 - [Déployer une application React](./slides/5-deploy.html)
+
+- [Tester son application React](./slides/6-test.html)
