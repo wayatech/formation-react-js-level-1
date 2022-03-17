@@ -58,7 +58,7 @@
     <p>Le code devient plus lisible et compréhensible.<br /></p>
     <h5>Prévisibilité</h5>
     <p>
-      Une fonction ne changera jamais une valeur dans que vous en soyez
+      Une fonction ne changera jamais une valeur sans que vous en soyez
       informé.<br />
     </p>
     <h5>Performance</h5>
@@ -77,7 +77,7 @@
     </p>
     <p>
       Sur un navigateur, lors que le DOM change, le navigateur doit effectuer
-      des opérations qui sont longueuses et coûteuses (tout est relatif, les
+      des opérations qui sont longues et coûteuses (tout est relatif, les
       opérations s'effectuent en quelques ms), notamment le
       <em>rendu de l’arbre</em>, le <em>layout</em> (ou <em>reflow</em> ou
       <em>relayout</em>) et la <em>peinture</em> (<em>repaint</em>).<br />
@@ -94,8 +94,8 @@
       composant est modifié) React définie le composant comme
       <em>dirty</em>.<br />
       Ensuite React met à jour le DOM virtuel en appliquant les différences de
-      tous les composants <em>dirty</em> c’est l'étape de <em>réconciliation</em
-      ><br />
+      tous les composants <em>dirty</em> c’est l'étape de
+      <em>réconciliation</em>.<br />
       React effectue un traitement par lot et effectue une mise à jour unique du
       DOM afin de réduire le nombre de <em>reflow</em> et de <em>repaint</em>.
     </p>
@@ -114,8 +114,8 @@
     </p>
     <h4>Quels sont les avantages ?</h4>
     <p>
-      Une architecture plus simple et donc plus facile à lire.<br />
-      Moins sujette aux erreurs car nous avons un meilleur contrôle des
+      Une architecture plus simple et donc plus facile à lire,<br />
+      moins sujette aux erreurs car nous avons un meilleur contrôle des
       données.<br />
       Debug plus facile car nous savons d'où provient la donnée.<br />
     </p>
@@ -140,7 +140,7 @@
       Cela nous permet d’utiliser du JSX dans des instructions
       <strong>if</strong>, des boucles <strong>for</strong>, etc...<br />
       Comme avec le XHTML toutes les balises doivent être fermées.<br />
-      La convention de nommage utilisée est le <em>lower camelCase</em>.<br />
+      La convention de nommage utilisée pour les propriétés est le <em>lower camelCase</em>.<br />
     </p>
     <p>
       Ce n’est pas obligatoire d’utiliser le <em>JSX</em> lorsque l’on utilise
@@ -159,7 +159,7 @@
       Lorsqu'une application grandit, <strike>on peut</strike> il faut utiliser
       des outils de validation de types. Les plus courants sont <em>Flow</em> et
       <em>Typescript</em>.<br />Si on ne souhaite pas utiliser ces extensions,
-      React fournit sa propre fonctionnalité de validation.<br />
+      React fournit sa propre fonctionnalité de validation : les <em>PropTypes</em>.<br />
     </p>
     <pre data-src="../assets/prop-types/greeting.js"></pre>
     <pre data-src="../assets//prop-types/greeting-stranger.js"></pre>
