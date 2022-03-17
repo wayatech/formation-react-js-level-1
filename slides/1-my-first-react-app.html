@@ -78,6 +78,7 @@
     <pre><code class="language-bash">npx create-react-app my-first-react-app
 cd my-first-react-app
 yarn start</code></pre>
+
     <h2>Le rendu des éléments</h2>
     <p>
       React DOM se charge de mettre à jour le DOM afin qu’il corresponde aux
@@ -108,8 +109,9 @@ yarn start</code></pre>
       <br />
     </p>
     <pre
-      data-src="../apps/my-first-react-app/src/module-2/components/BackgroundSwitch.js"
+      data-src="../assets/my-first-react-app/MyComponent.js"
     ></pre>
+    <br/>
     <h4>Composant à état (Statefull component)</h4>
     <p>
       En plus de pouvoir recevoir des données (accessibles via this.props), un
@@ -120,7 +122,9 @@ yarn start</code></pre>
     <pre
       data-src="../apps/my-first-react-app/src/module-2/components/Counter/index.js"
     ></pre>
+    <br/>
     <h3>Module 2 : Fonctions composants et composants à base de classes</h3>
+    <br/>
     <h4>Fonction composant (Functional Component)</h4>
     <p>
       C’est un composant React qui accepte un seul argument « props » («
@@ -129,6 +133,7 @@ yarn start</code></pre>
     <pre
       data-src="../apps/my-first-react-app/src/module-2/components/BackgroundSwitch.js"
     ></pre>
+    <br/>
     <h4>Composant à base de classe (Class Component)</h4>
     <p>
       C'est un composant React écrit sous forme de classe qui possède un état et
@@ -137,12 +142,13 @@ yarn start</code></pre>
     <pre
       data-src="../apps/my-first-react-app/src/module-3/components/BackgroundSwitch.js"
     ></pre>
+    <br/>
     <h3>Module 3 : Cycle de vie</h3>
     <p>
-      La méthode componentDidMount() est exécutée après que la sortie du
-      composant a été injectée dans le DOM.<br />
+      La méthode <strong>componentDidMount()</strong> est exécutée après que la sortie du
+      composant ait été injectée dans le DOM.<br />
       Lorsque le composant finit par être retiré du DOM, React appellera la
-      méthode de cycle de vie componentWillUnmount().<br />
+      méthode de cycle de vie <strong>componentWillUnmount()</strong>.<br />
     </p>
     <pre
       data-src="../apps/my-first-react-app/src/module-3/components/Timer/index.js"
