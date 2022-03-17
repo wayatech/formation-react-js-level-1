@@ -12,16 +12,3 @@ exports[`Timer display correctly 1`] = `
   0
 </p>
 `;
-
-exports[`Timer increment correctly 1`] = `
-<p
-  style={
-    Object {
-      "backgroundColor": "yellow",
-    }
-  }
->
-  Secondes : 
-  0
-</p>
-`;
